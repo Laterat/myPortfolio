@@ -9,10 +9,10 @@ export default function Header() {
         </Link>
 
         <nav className="flex gap-6 text-sm">
-          <Link href="#about">About</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#skills">Skills</Link>
-          <Link href="#contact">Contact</Link>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
       </div>
     </header>
