@@ -5,7 +5,13 @@ export default function Header() {
     <header className="border-b">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-bold text-xl">
-          Latera
+          <div>
+            <div>L</div>
+            <div>
+              <p>Latera</p>
+              <p>Developer</p>
+            </div>
+          </div>
         </Link>
 
         <nav className="flex gap-6 text-sm">
@@ -14,6 +20,11 @@ export default function Header() {
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+
+        <div>
+          <button>View more</button>
+          <button>Hire me</button>
+        </div>
       </div>
     </header>
   );
