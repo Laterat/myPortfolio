@@ -3,8 +3,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Portfolio",
-  description: "Personal portfolio",
+  title: "Latera Mekonnen | Software Developer",
+  description:
+    "Professional portfolio for a software developer building product experiences, scalable apps, and reliable digital systems.",
 };
 
 export default function RootLayout({
