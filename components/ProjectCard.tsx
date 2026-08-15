@@ -1,13 +1,5 @@
 import Link from "next/link";
-
-export interface ProjectItem {
-  title: string;
-  category: string;
-  summary: string;
-  description: string;
-  tags: string[];
-  link?: string;
-}
+import { ProjectItem } from "@/interfaces/product";
 
 interface ProjectCardProps {
   project: ProjectItem;
