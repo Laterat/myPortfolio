@@ -20,7 +20,6 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav
           className="hidden items-center gap-6 md:flex lg:gap-8"
           aria-label="Main navigation"
