@@ -1,4 +1,4 @@
-import type { ProjectItem } from "@/components/ProjectCard";
+import type { ProjectItem } from "@/interfaces/product";
 
 export const projectsData: ProjectItem[] = [
   {

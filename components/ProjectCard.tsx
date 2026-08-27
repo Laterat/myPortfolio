@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProjectItem } from "@/interfaces/product";
+import type { ProjectItem } from "@/interfaces/product";
 
 interface ProjectCardProps {
   project: ProjectItem;
