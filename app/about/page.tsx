@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <div className="bg-surface text-white">
@@ -237,12 +239,12 @@ export default function About() {
               </p>
             </div>
 
-            <a
+            <Link
               href="/contact"
               className="inline-flex w-fit rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:bg-accent-soft"
             >
               Start a conversation →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
