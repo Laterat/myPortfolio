@@ -5,4 +5,6 @@ export interface ProjectItem {
   summary: string;
   description: string;
   tags: string[];
+  focus: string;
+  role: string;
 }

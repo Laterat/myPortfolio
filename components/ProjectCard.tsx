@@ -1,55 +1,10 @@
 import Link from "next/link";
 import type { ProjectItem } from "@/interfaces/product";
 
-interface ProjectCardProps {
-  project: ProjectItem;
-  index: number;
-}
-
-export default function ProjectCard({ project, index }: ProjectCardProps) {
-  return (
-    <article className="group relative overflow-hidden rounded-[28px] border border-surface-border bg-[#111111] p-6 transition duration-300 hover:-translate-y-2 hover:border-accent/50">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,69,0,0.16),_transparent_46%)] opacity-0 transition duration-500 group-hover:opacity-100" />
-
-      <div className="relative">
-        <div className="flex items-center justify-between gap-3">
-          <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-neutral-300">
-            {project.category}
-          </span>
-          <span className="text-xs uppercase tracking-[0.28em] text-neutral-500">
-            0{index + 1}
-          </span>
-        </div>
-
-        <h3 className="mt-6 text-2xl font-semibold text-white">
-          {project.title}
-        </h3>
-        <p className="mt-3 text-sm leading-7 text-neutral-300">
-          {project.summary}
-        </p>
-        <p className="mt-4 text-sm leading-7 text-neutral-400">
-          {project.description}
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-surface-border px-2.5 py-1 text-xs text-neutral-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <Link
-          href={`/projects/${project.slug}`}
-          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:text-accent-soft"
-        >
-          View case study
-          <span aria-hidden="true">→</span>
-        </Link>
-      </div>
-    </article>
-  );
+export default function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
+  return <article className="group border-t rule py-8 first:border-t-0 md:grid md:grid-cols-[6rem_1fr_auto] md:gap-6">
+    <p className="font-mono text-xs text-accent-soft">0{index + 1}</p>
+    <div><p className="font-mono text-xs uppercase tracking-[.12em] text-neutral-500">{project.category}</p><h2 className="mt-3 text-3xl font-black tracking-[-.05em] text-white md:text-4xl">{project.title}</h2><p className="mt-4 max-w-xl leading-7 text-neutral-300">{project.summary}</p><p className="mt-5 text-sm text-neutral-500"><span className="text-neutral-300">Focus: </span>{project.focus}</p><div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="border rule px-2 py-1 font-mono text-[.68rem] text-neutral-400">{tag}</span>)}</div></div>
+    <Link href={`/projects/${project.slug}`} className="mt-6 inline-flex h-fit items-center gap-2 border border-transparent px-3 py-2 text-sm font-bold text-accent-soft transition group-hover:border-accent md:mt-0">Read case study <span aria-hidden="true">↗</span></Link>
+  </article>;
 }

@@ -10,6 +10,8 @@ export const projectsData: ProjectItem[] = [
     description:
       "I designed the product experience around faster pipeline reviews, cleaner data entry, and reliable reporting flows.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "UX"],
+    focus: "Pipeline visibility and dependable reporting",
+    role: "Product experience and engineering",
   },
   {
     title: "SignalOps",
@@ -20,6 +22,8 @@ export const projectsData: ProjectItem[] = [
     description:
       "The interface focused on clarity, rapid status checks, and a more dependable operational workflow for teams under pressure.",
     tags: ["React", "Node.js", "Charts", "Realtime"],
+    focus: "Fast operational awareness under pressure",
+    role: "Interface and workflow design",
   },
   {
     title: "Northstar Commerce",
@@ -30,5 +34,7 @@ export const projectsData: ProjectItem[] = [
     description:
       "The experience was tuned for faster browsing, better trust signals, and thoughtful product storytelling across devices.",
     tags: ["Next.js", "Tailwind", "UX", "Performance"],
+    focus: "A faster, clearer path to product discovery",
+    role: "Frontend product development",
   },
 ];
