@@ -1,13 +1,22 @@
 import "./globals.css";
+import type { Metadata, Viewport } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CommandPalette from "@/components/CommandPalette";
 
-export const metadata = {
-  title: "Latera Mekonnen | Software Developer",
+export const metadata: Metadata = {
+  title: { default: "Latera Mekonnen | Software Developer", template: "%s | Latera Mekonnen" },
   description:
-    "Professional portfolio for a software developer building product experiences, scalable apps, and reliable digital systems.",
+    "Portfolio of Latera Mekonnen, a product-minded software developer building clear, reliable web experiences.",
+  applicationName: "Latera Mekonnen Portfolio",
+  keywords: ["Latera Mekonnen", "software developer", "frontend engineer", "Next.js", "TypeScript", "web development"],
+  authors: [{ name: "Latera Mekonnen" }],
+  robots: { index: true, follow: true },
+  openGraph: { type: "website", locale: "en_US", title: "Latera Mekonnen | Software Developer", description: "Product-minded software engineering for useful, considered web experiences." },
+  twitter: { card: "summary", title: "Latera Mekonnen | Software Developer", description: "Product-minded software engineering for useful, considered web experiences." },
 };
+
+export const viewport: Viewport = { themeColor: "#0b0c0d", colorScheme: "dark" };
 
 export default function RootLayout({
   children,
@@ -16,10 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body>
         <Header />
         {children}
