@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CommandPalette from "@/components/CommandPalette";
 
 export const metadata = {
   title: "Latera Mekonnen | Software Developer",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <CommandPalette />
       </body>
     </html>
   );
