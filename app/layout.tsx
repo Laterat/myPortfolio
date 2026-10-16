@@ -22,7 +22,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
         <CommandPalette />
       </body>
