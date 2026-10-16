@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projectsData } from "../data";
+import type { Metadata } from "next";
 
 export function generateStaticParams() { return projectsData.map(({ slug }) => ({ slug })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const project = projectsData.find((entry) => entry.slug === slug); return project ? { title: project.title, description: project.summary } : { title: "Project not found", robots: { index: false, follow: false } }; }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

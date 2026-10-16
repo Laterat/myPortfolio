@@ -1,4 +1,7 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "About", description: "Learn about Latera Mekonnen's product-minded software engineering approach, technical focus, and working principles." };
 
 const capabilities = ["Product discovery", "Interface systems", "Frontend architecture", "API design", "Data modeling", "Performance", "Accessibility", "Deployment workflows"];
 const principles = [["01", "Clarity over novelty", "The strongest solution makes the next decision easier—for users and for the team maintaining it."], ["02", "Design is engineering", "Responsive states, performance, and accessible interactions are part of the product, not a finishing pass."], ["03", "Build for the real constraint", "Useful systems emerge from the actual people, business goals, and technical boundaries in front of us."]];
