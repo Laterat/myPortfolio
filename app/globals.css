@@ -65,6 +65,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .panel { border: 1px solid var(--surface-border); background: color-mix(in srgb, var(--surface) 92%, transparent); }
 .rule { border-color: var(--surface-border); }
 
+@media (prefers-reduced-motion: no-preference) {
+  a, button { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease, opacity 160ms ease; }
+  .panel { transition: border-color 220ms ease, transform 220ms ease, background-color 220ms ease; }
+  .panel:hover { border-color: color-mix(in srgb, var(--accent) 65%, var(--surface-border)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
