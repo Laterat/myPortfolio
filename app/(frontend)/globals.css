@@ -49,6 +49,13 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .section-title { max-width: 48rem; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 650; letter-spacing: -.055em; line-height: 1.02; }
 .panel { border: 1px solid var(--surface-border); background: var(--surface-raised); }
 .rule { border-color: var(--surface-border); }
+.rich-text p + p, .rich-text ul + p, .rich-text p + ul { margin-top: 1.25rem; }
+.rich-text h1, .rich-text h2, .rich-text h3 { margin: 2rem 0 .75rem; color: var(--ink); font-weight: 600; letter-spacing: -.025em; }
+.rich-text ul, .rich-text ol { padding-left: 1.4rem; }
+.rich-text ul { list-style: disc; }
+.rich-text ol { list-style: decimal; }
+.rich-text a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
+.rich-text blockquote { margin: 1.5rem 0; border-left: 1px solid var(--surface-border); padding-left: 1rem; }
 
 @media (prefers-reduced-motion: no-preference) {
   a, button { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease, opacity 160ms ease; }
