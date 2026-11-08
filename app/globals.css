@@ -1,27 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
-  --ink: #f6f3ee;
-  --muted: #a9a6a0;
-  --faint: #6f6d68;
-  --canvas: #0b0c0d;
-  --surface: #121416;
-  --surface-raised: #191c1f;
-  --surface-border: #2a2d30;
-  --accent: #ff5c35;
-  --accent-soft: #ff8a68;
-  --accent-strong: #e84620;
+  color-scheme: light;
+  --ink: #171715;
+  --muted: #686864;
+  --faint: #888882;
+  --canvas: #f5f4f0;
+  --surface: #eeede8;
+  --surface-raised: #ffffff;
+  --surface-border: #d8d7d1;
+  --focus: #171715;
 }
 
 @theme inline {
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-strong: var(--accent-strong);
+  --color-accent: var(--ink);
+  --color-accent-soft: var(--muted);
   --color-surface: var(--canvas);
   --color-surface-raised: var(--surface-raised);
   --color-surface-border: var(--surface-border);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -33,44 +30,34 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-body::before {
-  position: fixed;
-  z-index: -1;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-  opacity: .32;
-  background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, black, transparent 72%);
 }
 
 a, button { -webkit-tap-highlight-color: transparent; }
 
 :focus-visible {
-  outline: 2px solid var(--accent-soft);
+  outline: 2px solid var(--focus);
   outline-offset: 4px;
 }
 
-::selection { background: var(--accent); color: #120b08; }
+::selection { background: #d8d7d1; color: #171715; }
 
-.site-shell { width: min(100% - 2rem, 76rem); margin-inline: auto; }
-.eyebrow { color: var(--accent-soft); font-family: var(--font-mono); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-.section-title { max-width: 45rem; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -.055em; line-height: 1; }
-.panel { border: 1px solid var(--surface-border); background: color-mix(in srgb, var(--surface) 92%, transparent); }
+.site-shell { width: min(100% - 2.5rem, 78rem); margin-inline: auto; }
+.eyebrow { color: var(--muted); font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em; }
+.section-title { max-width: 48rem; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 650; letter-spacing: -.055em; line-height: 1.02; }
+.panel { border: 1px solid var(--surface-border); background: var(--surface-raised); }
 .rule { border-color: var(--surface-border); }
 
 @media (prefers-reduced-motion: no-preference) {
   a, button { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease, opacity 160ms ease; }
-  .panel { transition: border-color 220ms ease, transform 220ms ease, background-color 220ms ease; }
-  .panel:hover { border-color: color-mix(in srgb, var(--accent) 65%, var(--surface-border)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media (min-width: 768px) {
+  .site-shell { width: min(100% - 5rem, 78rem); }
 }
