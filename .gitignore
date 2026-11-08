@@ -44,3 +44,5 @@ next-env.d.ts
 .vercel
 .env*
 !.env.example
+
+AI_SLOP_AVOID.md
