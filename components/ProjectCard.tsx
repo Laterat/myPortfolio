@@ -1,10 +1,19 @@
 import Link from "next/link";
-import type { ProjectItem } from "@/interfaces/product";
+import type { MediaAsset, Project } from "@/lib/payload/content";
+import PayloadImage from "@/components/PayloadImage";
 
-export default function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
-  return <article className="group border-t rule py-8 first:border-t-0 md:grid md:grid-cols-[6rem_1fr_auto] md:gap-6">
-    <p className="font-mono text-xs text-accent-soft">0{index + 1}</p>
-    <div><p className="font-mono text-xs uppercase tracking-[.12em] text-neutral-500">{project.category}</p><h2 className="mt-3 text-3xl font-black tracking-[-.05em] text-white md:text-4xl">{project.title}</h2><p className="mt-4 max-w-xl leading-7 text-neutral-300">{project.summary}</p><p className="mt-5 text-sm text-neutral-500"><span className="text-neutral-300">Focus: </span>{project.focus}</p><div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="border rule px-2 py-1 font-mono text-[.68rem] text-neutral-400">{tag}</span>)}</div></div>
-    <Link href={`/projects/${project.slug}`} className="mt-6 inline-flex h-fit items-center gap-2 border border-transparent px-3 py-2 text-sm font-bold text-accent-soft transition group-hover:border-accent hover:-translate-y-0.5 md:mt-0">Read case study <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span></Link>
+export default function ProjectCard({ project }: { project: Project }) {
+  const cover = project.coverImage && typeof project.coverImage !== "number" ? project.coverImage as MediaAsset : null;
+  return <article className="grid gap-5 border-b rule py-8 last:border-0 md:grid-cols-[minmax(12rem,.8fr)_1.2fr_auto] md:items-center md:gap-10 md:py-10">
+    <Link href={`/projects/${project.slug}`} className="block overflow-hidden bg-[var(--surface)]" aria-label={`Read ${project.title}`}>
+      {cover?.url ? <PayloadImage asset={cover.sizes?.card || cover} alt={cover.alt || ""} className="aspect-[3/2] w-full object-cover" /> : <div className="aspect-[3/2]" aria-hidden="true" />}
+    </Link>
+    <div>
+      <p className="eyebrow">{project.category}</p>
+      <h2 className="mt-2 text-2xl font-semibold tracking-[-.035em] md:text-3xl"><Link href={`/projects/${project.slug}`} className="hover:underline">{project.title}</Link></h2>
+      <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">{project.summary}</p>
+      {project.technologies?.length ? <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--muted)]" aria-label="Technologies">{project.technologies.map((technology, index) => technology.name ? <li key={`${technology.name}-${index}`}>{technology.name}</li> : null)}</ul> : null}
+    </div>
+    <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-medium md:justify-self-end">View project <span aria-hidden="true">↗</span></Link>
   </article>;
 }

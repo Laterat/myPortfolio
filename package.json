@@ -2,18 +2,34 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.23.4 <23 || >=24.22.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "payload": "payload",
+    "payload:migrate": "payload migrate",
+    "payload:migrate:create": "payload migrate:create",
+    "payload:migrate:status": "payload migrate:status",
+    "cms:create-admin": "tsx scripts/create-admin.ts",
+    "test": "tsx --test tests/*.test.ts",
     "lint": "eslint",
-    "verify": "npm run lint && npx tsc --noEmit && npm run build",
+    "verify": "npm test && npm run lint && npx tsc --noEmit && npm run build",
     "prepare": "husky"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "@payloadcms/db-postgres": "3.93.0",
+    "@payloadcms/next": "3.93.0",
+    "@payloadcms/richtext-lexical": "3.93.0",
+    "@payloadcms/storage-s3": "3.93.0",
+    "graphql": "16.15.0",
+    "next": "16.4.5",
+    "payload": "3.93.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sharp": "0.35.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,9 +37,10 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.4.5",
     "husky": "^9.1.7",
     "tailwindcss": "^4",
+    "tsx": "4.23.15",
     "typescript": "^5"
   }
 }
