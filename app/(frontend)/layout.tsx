@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Rail from "@/components/Rail";
 import CommandPalette from "@/components/CommandPalette";
 import { siteConfig } from "@/lib/site";
 import { getSiteSettings } from "@/lib/payload/content";
@@ -27,18 +26,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const viewport: Viewport = { themeColor: "#f5f4f0", colorScheme: "light" };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const identity = (await getSiteSettings())?.identity;
   return (
     <html lang="en">
       <body>
         <a href="#main-content" className="sr-only z-[100] bg-[var(--ink)] px-4 py-3 text-sm font-medium text-white focus:fixed focus:left-4 focus:top-4 focus:not-sr-only">Skip to main content</a>
-        <Header />
-        {children}
-        <Footer />
+        <div className="frame"><Rail name={identity?.fullName || siteConfig.name} role={identity?.professionalTitle || "Software Developer"} /><div className="min-w-0">{children}</div></div>
         <CommandPalette />
         <PersonStructuredData />
       </body>
