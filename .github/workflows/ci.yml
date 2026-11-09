@@ -53,7 +53,7 @@ jobs:
           test -n "$VERCEL_PROJECT_ID" || { echo "Missing GitHub Actions secret VERCEL_PROJECT_ID"; exit 1; }
 
       - name: Install Vercel CLI
-        run: npm i -g vercel
+        run: npm install --global vercel@57.0.0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -63,6 +63,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Verify Vercel authentication
+        run: vercel whoami --token="$VERCEL_TOKEN"
+
+      - name: Pull Vercel environment
+        run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
 
       - name: Pull Vercel environment
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
