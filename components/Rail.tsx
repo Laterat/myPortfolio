@@ -2,20 +2,19 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const sections = [["intro", "Intro"], ["work", "Work"], ["path", "Experience"], ["credentials", "Credentials"], ["toolkit", "Toolkit"], ["contact", "Contact"]] as const;
+import { portfolioContent } from "@/lib/content";
 
 export default function Rail({ name, role }: { name: string; role: string }) {
   const [active, setActive] = useState("intro");
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Addis_Ababa" });
+    const fmt = new Intl.DateTimeFormat(portfolioContent.navigation.timeLocale, { hour: "2-digit", minute: "2-digit", timeZone: portfolioContent.navigation.timeZone });
     const tick = () => setTime(fmt.format(new Date()));
     tick();
     const timer = setInterval(tick, 30000);
     const io = new IntersectionObserver((entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: "-35% 0px -60% 0px" });
-    sections.forEach(([id]) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    portfolioContent.navigation.sections.forEach(({ id }) => { const el = document.getElementById(id); if (el) io.observe(el); });
     let raf = 0;
     const onScroll = () => {
       cancelAnimationFrame(raf);
@@ -33,11 +32,11 @@ export default function Rail({ name, role }: { name: string; role: string }) {
     <div className="rail-id">
       <Link href="/#intro" className="rail-name">{name}</Link>
       <p className="rail-role">{role}</p>
-      <p className="rail-time" aria-label="Local time in Addis Ababa">{time ? `${time} EAT · Addis Ababa` : "Addis Ababa"}</p>
+    <p className="rail-time" aria-label={portfolioContent.navigation.localTimeLabel}>{time ? `${time} ${portfolioContent.navigation.localTimeSuffix}` : portfolioContent.identity.location}</p>
     </div>
     <nav aria-label="Page sections" className="rail-nav">
-      {sections.map(([id, label]) => <Link key={id} href={`/#${id}`} aria-current={active === id ? "location" : undefined}>{label}</Link>)}
+      {portfolioContent.navigation.sections.map(({ id, label }) => <Link key={id} href={`/#${id}`} aria-current={active === id ? "location" : undefined}>{label}</Link>)}
     </nav>
-    <p className="rail-hint">Ctrl K jumps to any section</p>
+    <p className="rail-hint">{portfolioContent.navigation.shortcutHint}</p>
   </header>;
 }

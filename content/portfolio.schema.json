@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "portfolio.schema.json",
+  "title": "Portfolio content",
+  "description": "Editable content and visible text for the portfolio site.",
+  "type": "object",
+  "required": ["site", "identity", "navigation", "commandPalette", "copy", "socialLinks", "projects", "experience", "education", "certificates", "skills"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "site": {
+      "type": "object",
+      "required": ["name", "title", "description", "canonicalUrl", "language", "themeColor", "keywords"],
+      "properties": {
+        "name": { "type": "string" }, "title": { "type": "string" }, "description": { "type": "string" },
+        "canonicalUrl": { "type": "string" }, "language": { "type": "string" }, "themeColor": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "identity": {
+      "type": "object",
+      "required": ["fullName", "nameLines", "professionalTitle", "introduction", "location", "availability", "contactEmail", "resumeUrl", "profileImage"],
+      "properties": {
+        "fullName": { "type": "string" }, "nameLines": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "professionalTitle": { "type": "string" }, "introduction": { "type": "string" }, "location": { "type": "string" },
+        "availability": { "type": "object", "required": ["open", "label"], "properties": { "open": { "type": "boolean" }, "label": { "type": "string" } }, "additionalProperties": false },
+        "contactEmail": { "type": "string" }, "resumeUrl": { "type": "string" }, "profileImage": { "anyOf": [{ "$ref": "#/$defs/image" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    },
+    "navigation": {
+      "type": "object", "required": ["sections", "shortcutHint", "shortcutKey", "shortcutLabel", "openButton", "localTimeLabel", "localTimeSuffix", "timeZone", "timeLocale"],
+      "properties": {
+        "sections": { "type": "array", "items": { "type": "object", "required": ["id", "label"], "properties": { "id": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "label": { "type": "string" } }, "additionalProperties": false } },
+        "shortcutHint": { "type": "string" }, "shortcutKey": { "type": "string", "minLength": 1 }, "shortcutLabel": { "type": "string" },
+        "openButton": { "type": "string" }, "localTimeLabel": { "type": "string" }, "localTimeSuffix": { "type": "string" }, "timeZone": { "type": "string" }, "timeLocale": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "commandPalette": { "type": "object", "required": ["title", "searchLabel", "placeholder", "closeLabel", "emptyMessage", "footerHint"], "properties": { "title": { "type": "string" }, "searchLabel": { "type": "string" }, "placeholder": { "type": "string" }, "closeLabel": { "type": "string" }, "emptyMessage": { "type": "string" }, "footerHint": { "type": "string" } }, "additionalProperties": false },
+    "copy": { "type": "object", "required": ["labels", "sections", "empty", "contactIntro", "emailCopied", "emailCopyFailed", "emailCopyHint", "openMailApp", "copyright"], "properties": { "labels": { "type": "object", "additionalProperties": { "type": "string" } }, "sections": { "type": "object", "additionalProperties": { "type": "string" } }, "empty": { "type": "object", "additionalProperties": { "type": "string" } }, "contactIntro": { "type": "string" }, "emailCopied": { "type": "string" }, "emailCopyFailed": { "type": "string" }, "emailCopyHint": { "type": "string" }, "openMailApp": { "type": "string" }, "copyright": { "type": "string" } }, "additionalProperties": false },
+    "socialLinks": { "type": "array", "items": { "type": "object", "required": ["platform", "url"], "properties": { "platform": { "type": "string" }, "url": { "type": "string", "format": "uri" } }, "additionalProperties": false } },
+    "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } },
+    "experience": { "type": "array", "items": { "type": "object", "required": ["position", "organization", "startDate"], "properties": { "position": { "type": "string" }, "organization": { "type": "string" }, "location": { "type": "string" }, "startDate": { "type": "string" }, "endDate": { "type": "string" }, "current": { "type": "boolean" }, "responsibilities": { "$ref": "#/$defs/stringList" }, "achievements": { "$ref": "#/$defs/stringList" } }, "additionalProperties": false } },
+    "education": { "type": "array", "items": { "type": "object", "required": ["qualification", "institution", "startDate"], "properties": { "qualification": { "type": "string" }, "fieldOfStudy": { "type": "string" }, "institution": { "type": "string" }, "location": { "type": "string" }, "startDate": { "type": "string" }, "endDate": { "type": "string" }, "current": { "type": "boolean" }, "description": { "type": "string" }, "achievements": { "$ref": "#/$defs/stringList" } }, "additionalProperties": false } },
+    "certificates": { "type": "array", "items": { "type": "object", "required": ["title", "issuer", "issueDate"], "properties": { "title": { "type": "string" }, "issuer": { "type": "string" }, "issueDate": { "type": "string" }, "credentialID": { "type": "string" }, "verificationURL": { "type": "string", "format": "uri" }, "credentialFile": { "type": "string" } }, "additionalProperties": false } },
+    "skills": { "type": "array", "items": { "type": "object", "required": ["name", "category"], "properties": { "name": { "type": "string" }, "category": { "type": "string" } }, "additionalProperties": false } }
+  },
+  "$defs": {
+    "stringList": { "type": "array", "items": { "type": "string" } },
+    "image": { "type": "object", "required": ["src", "alt"], "properties": { "src": { "type": "string" }, "alt": { "type": "string" }, "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 } }, "additionalProperties": false },
+    "project": { "type": "object", "required": ["slug", "title", "category", "summary"], "properties": { "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "title": { "type": "string" }, "category": { "type": "string" }, "summary": { "type": "string" }, "projectDate": { "type": "string" }, "role": { "type": "string" }, "technologies": { "$ref": "#/$defs/stringList" }, "coverImage": { "anyOf": [{ "$ref": "#/$defs/image" }, { "type": "null" }] }, "overview": { "$ref": "#/$defs/stringList" }, "problem": { "type": "string" }, "solution": { "type": "string" }, "responsibilities": { "$ref": "#/$defs/stringList" }, "screenshots": { "type": "array", "items": { "type": "object", "required": ["src", "alt"], "properties": { "src": { "type": "string" }, "alt": { "type": "string" }, "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 }, "caption": { "type": "string" } }, "additionalProperties": false } }, "liveURL": { "type": "string", "format": "uri" }, "githubURL": { "type": "string", "format": "uri" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

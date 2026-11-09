@@ -1,0 +1,109 @@
+{
+  "$schema": "./portfolio.schema.json",
+  "site": {
+    "name": "Latera Mekonnen",
+    "title": "Latera Mekonnen | Software Developer",
+    "description": "Portfolio of Latera Mekonnen, a product-minded software developer building clear, reliable web experiences.",
+    "canonicalUrl": "",
+    "language": "en",
+    "themeColor": "#ecebe5",
+    "keywords": ["Latera Mekonnen", "software developer", "frontend engineer", "Next.js", "TypeScript", "web development"]
+  },
+  "identity": {
+    "fullName": "Latera Mekonnen",
+    "nameLines": ["Latera", "Mekonnen"],
+    "professionalTitle": "Software Developer",
+    "introduction": "I build web products with clear interfaces and reliable engineering.",
+    "location": "Addis Ababa",
+    "availability": { "open": false, "label": "Reachable by email" },
+    "contactEmail": "",
+    "resumeUrl": "",
+    "profileImage": null
+  },
+  "navigation": {
+    "sections": [
+      { "id": "intro", "label": "Intro" },
+      { "id": "work", "label": "Work" },
+      { "id": "path", "label": "Experience" },
+      { "id": "credentials", "label": "Credentials" },
+      { "id": "toolkit", "label": "Toolkit" },
+      { "id": "contact", "label": "Contact" }
+    ],
+    "shortcutHint": "Ctrl K jumps to any section",
+    "shortcutKey": "k",
+    "shortcutLabel": "Ctrl K",
+    "openButton": "Open site navigation",
+    "localTimeLabel": "Local time in Addis Ababa",
+    "localTimeSuffix": "EAT · Addis Ababa",
+    "timeZone": "Africa/Addis_Ababa",
+    "timeLocale": "en-GB"
+  },
+  "commandPalette": {
+    "title": "Site navigation",
+    "searchLabel": "Search navigation",
+    "placeholder": "Jump to a section",
+    "closeLabel": "Esc",
+    "emptyMessage": "No sections found.",
+    "footerHint": "Use Ctrl K to open navigation"
+  },
+  "copy": {
+    "labels": {
+      "basedIn": "Based in",
+      "role": "Role",
+      "status": "Status",
+      "resume": "Résumé",
+      "download": "Download",
+      "present": "Present",
+      "experience": "Experience",
+      "education": "Education",
+      "problem": "Problem",
+      "solution": "Solution",
+      "myRole": "My role",
+      "responsibilities": "Responsibilities",
+      "technologies": "Technologies",
+      "projectDate": "Project date",
+      "allProjects": "All projects",
+      "liveProject": "Live project",
+      "repository": "Repository",
+      "standalonePage": "Standalone page",
+      "projectNotFound": "Project not found",
+      "atAGlance": "At a glance",
+      "skipToMainContent": "Skip to main content",
+      "verify": "Verify",
+      "viewFile": "View file",
+      "opensInNewTab": " (opens in a new tab)"
+    },
+    "sections": {
+      "intro": "Introduction",
+      "work": "Work",
+      "experienceAndEducation": "Experience and education",
+      "credentials": "Credentials",
+      "toolkit": "Toolkit",
+      "contact": "Contact"
+    },
+    "empty": {
+      "projects": "Case studies are being written and will appear here once added to the JSON content file.",
+      "experience": "Nothing listed here yet.",
+      "education": "Nothing listed here yet.",
+      "credentials": "Credentials will appear here once added to the JSON content file.",
+      "skills": "Skills will appear here once added to the JSON content file.",
+      "email": "Email address not published yet; use a profile below."
+    },
+    "contactIntro": "Product work, collaboration, or a technical question: email is the fastest way to reach me.",
+    "emailCopied": "Copied to clipboard",
+    "emailCopyFailed": "Copy failed, use the mail link",
+    "emailCopyHint": "Click to copy, or",
+    "openMailApp": "open your mail app",
+    "copyright": "©"
+  },
+  "socialLinks": [
+    { "platform": "GitHub", "url": "https://github.com/Laterat" },
+    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/latera-mekonnen/" },
+    { "platform": "Twitter", "url": "https://twitter.com/lateramekonnen" }
+  ],
+  "projects": [],
+  "experience": [],
+  "education": [],
+  "certificates": [],
+  "skills": []
+}

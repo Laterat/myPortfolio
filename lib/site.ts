@@ -1,9 +1,11 @@
+import { portfolioContent } from "@/lib/content";
+
 export const siteConfig = {
-  name: "Latera Mekonnen",
-  title: "Latera Mekonnen | Software Developer",
-  description: "Portfolio of Latera Mekonnen, a product-minded software developer building clear, reliable web experiences.",
-  url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, ""),
-  socials: ["https://github.com/Laterat", "https://www.linkedin.com/in/latera-mekonnen/", "https://twitter.com/lateramekonnen"],
+  name: portfolioContent.site.name,
+  title: portfolioContent.site.title,
+  description: portfolioContent.site.description,
+  url: portfolioContent.site.canonicalUrl.replace(/\/$/, "") || undefined,
+  socials: portfolioContent.socialLinks.map(({ url }) => url),
 };
 
 export function absoluteUrl(path = "/") {
