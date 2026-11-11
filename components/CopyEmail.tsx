@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { portfolioContent } from "@/lib/content";
 
 export default function CopyEmail({ email }: { email: string }) {
   const [state, setState] = useState<"idle" | "copied" | "failed">("idle");
@@ -11,7 +12,7 @@ export default function CopyEmail({ email }: { email: string }) {
   return <div className="mail">
     <button type="button" onClick={copy} className="mail-btn">{email}</button>
     <p aria-live="polite" className="mail-note">
-      {state === "copied" ? "Copied to clipboard" : state === "failed" ? "Copy failed, use the mail link" : <>Click to copy, or <a href={`mailto:${email}`}>open your mail app</a></>}
+      {state === "copied" ? portfolioContent.copy.emailCopied : state === "failed" ? portfolioContent.copy.emailCopyFailed : <>{portfolioContent.copy.emailCopyHint} <a href={`mailto:${email}`}>{portfolioContent.copy.openMailApp}</a></>}
     </p>
   </div>;
 }
