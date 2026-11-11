@@ -1,17 +1,24 @@
 {
   "$schema": "./portfolio.schema.json",
   "site": {
-    "name": "Latera Mekonnen",
-    "title": "Latera Mekonnen | Software Developer",
-    "description": "Portfolio of Latera Mekonnen, a product-minded software developer building clear, reliable web experiences.",
+    "name": "Latera Tilahun",
+    "title": "Latera Tilahun | Software Developer",
+    "description": "Portfolio of Latera Tilahun, a product-minded software developer building clear, reliable web experiences.",
     "canonicalUrl": "",
     "language": "en",
     "themeColor": "#ecebe5",
-    "keywords": ["Latera Mekonnen", "software developer", "frontend engineer", "Next.js", "TypeScript", "web development"]
+    "keywords": [
+      "Latera Tilahun",
+      "software developer",
+      "frontend engineer",
+      "Next.js",
+      "TypeScript",
+      "web development"
+    ]
   },
   "identity": {
-    "fullName": "Latera Mekonnen",
-    "nameLines": ["Latera", "Mekonnen"],
+    "fullName": "Latera Tilahun",
+    "nameLines": ["Latera", "Tilahun"],
     "professionalTitle": "Software Developer",
     "introduction": "I build web products with clear interfaces and reliable engineering.",
     "location": "Addis Ababa",
@@ -98,8 +105,11 @@
   },
   "socialLinks": [
     { "platform": "GitHub", "url": "https://github.com/Laterat" },
-    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/latera-mekonnen/" },
-    { "platform": "Twitter", "url": "https://twitter.com/lateramekonnen" }
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/latera-Tilahun/"
+    },
+    { "platform": "Twitter", "url": "https://twitter.com/lateraTilahun" }
   ],
   "projects": [],
   "experience": [],
