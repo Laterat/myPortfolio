@@ -1,4 +1,4 @@
-# Latera Mekonnen — Developer Portfolio
+# Latera Tilahun — Developer Portfolio
 
 A Next.js portfolio whose public content is edited in one JSON file. No CMS, database, admin panel, or external content service is required.
 
@@ -21,7 +21,10 @@ The content arrays are intentionally empty until real entries are available. Add
   "problem": "The problem the project addressed.",
   "solution": "What you built and why.",
   "responsibilities": ["A concrete contribution."],
-  "coverImage": { "src": "/images/project-cover.jpg", "alt": "Describe the image" },
+  "coverImage": {
+    "src": "/images/project-cover.jpg",
+    "alt": "Describe the image"
+  },
   "screenshots": [],
   "liveURL": "https://example.com",
   "githubURL": "https://github.com/username/project"
