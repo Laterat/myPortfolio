@@ -111,3 +111,7 @@ export type PortfolioContent = {
 };
 
 export const portfolioContent = rawContent as PortfolioContent;
+
+export function yearFromDate(date?: string): string {
+  return date?.match(/^\d{4}/)?.[0] ?? "";
+}

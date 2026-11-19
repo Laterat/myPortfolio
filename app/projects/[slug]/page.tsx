@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PortfolioImage from "@/components/PortfolioImage";
-import { portfolioContent, type Project } from "@/lib/content";
+import { portfolioContent, type Project, yearFromDate } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,7 +47,7 @@ export default async function ProjectDetail({ params }: Props) {
       <aside className="h-fit border-t rule pt-5 md:sticky md:top-24">
         {project.role ? <div><p className="eyebrow">{labels.myRole}</p><p className="mt-2 text-sm leading-6">{project.role}</p></div> : null}
         {project.technologies?.length ? <div className="mt-7"><p className="eyebrow">{labels.technologies}</p><ul className="mt-2 space-y-2 text-sm">{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul></div> : null}
-        {project.projectDate ? <div className="mt-7"><p className="eyebrow">{labels.projectDate}</p><p className="mt-2 text-sm">{new Date(project.projectDate).getFullYear()}</p></div> : null}
+        {project.projectDate ? <div className="mt-7"><p className="eyebrow">{labels.projectDate}</p><p className="mt-2 text-sm">{yearFromDate(project.projectDate)}</p></div> : null}
       </aside>
     </div>
   </main>;

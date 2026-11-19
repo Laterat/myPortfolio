@@ -1,13 +1,12 @@
 import Link from "next/link";
 import PortfolioImage from "@/components/PortfolioImage";
 import CopyEmail from "@/components/CopyEmail";
-import { portfolioContent } from "@/lib/content";
+import { portfolioContent, yearFromDate } from "@/lib/content";
 
 const content = portfolioContent;
 const labels = content.copy.labels;
 const text = content.copy;
-const year = (date?: string) => (date ? new Date(date).getFullYear() : "");
-const dateSpan = (start: string, end?: string, current?: boolean) => `${year(start)} – ${current ? labels.present : year(end)}`;
+const dateSpan = (start: string, end?: string, current?: boolean) => [yearFromDate(start), current ? labels.present : yearFromDate(end)].filter(Boolean).join(" – ");
 
 export default function Home() {
   const [first, ...rest] = content.identity.nameLines;
@@ -35,7 +34,7 @@ export default function Home() {
       {content.projects.length ? content.projects.map((project) => <details key={project.slug} className="proj reveal">
         <summary>
           <h3>{project.title}</h3>
-          <span className="meta">{project.category}{project.projectDate ? ` · ${year(project.projectDate)}` : ""}<span className="toggle" aria-hidden="true">+</span></span>
+          <span className="meta">{project.category}{project.projectDate ? ` · ${yearFromDate(project.projectDate)}` : ""}<span className="toggle" aria-hidden="true">+</span></span>
           <p className="sum">{project.summary}</p>
           {project.technologies?.length ? <p className="tech">{project.technologies.join(", ")}</p> : null}
         </summary>
@@ -73,7 +72,7 @@ export default function Home() {
 
     <section id="credentials" className="sec" aria-labelledby="cred-h">
       <h2 id="cred-h">{text.sections.credentials}{content.certificates.length ? <small>{content.certificates.length}</small> : null}</h2>
-      {content.certificates.length ? <ul className="creds">{content.certificates.map((certificate) => <li key={`${certificate.title}-${certificate.issuer}`} className="reveal"><strong>{certificate.title}</strong><span>{certificate.issuer} · {year(certificate.issueDate)}{certificate.credentialID ? ` · ID ${certificate.credentialID}` : ""}</span>{certificate.verificationURL ? <a href={certificate.verificationURL} target="_blank" rel="noreferrer">{labels.verify}<span className="sr-only"> {certificate.title}{labels.opensInNewTab}</span> ↗</a> : certificate.credentialFile ? <a href={certificate.credentialFile}>{labels.viewFile}<span className="sr-only"> {certificate.title}</span></a> : null}</li>)}</ul> : <p className="empty">{text.empty.credentials}</p>}
+      {content.certificates.length ? <ul className="creds">{content.certificates.map((certificate) => <li key={`${certificate.title}-${certificate.issuer}`} className="reveal"><strong>{certificate.title}</strong><span>{certificate.issuer} · {yearFromDate(certificate.issueDate)}{certificate.credentialID ? ` · ID ${certificate.credentialID}` : ""}</span>{certificate.verificationURL ? <a href={certificate.verificationURL} target="_blank" rel="noreferrer">{labels.verify}<span className="sr-only"> {certificate.title}{labels.opensInNewTab}</span> ↗</a> : certificate.credentialFile ? <a href={certificate.credentialFile}>{labels.viewFile}<span className="sr-only"> {certificate.title}</span></a> : null}</li>)}</ul> : <p className="empty">{text.empty.credentials}</p>}
     </section>
 
     <section id="toolkit" className="sec tint" aria-labelledby="tool-h">
