@@ -111,81 +111,9 @@
     },
     { "platform": "Twitter", "url": "https://twitter.com/lateraTilahun" }
   ],
-  "projects": [
-    {
-      "slug": "product-dashboard",
-      "title": "Product dashboard",
-      "category": "Placeholder case study",
-      "summary": "A calm, data-rich workspace for teams that need to see priorities at a glance.",
-      "projectDate": "2025-08-01",
-      "role": "Product designer and developer",
-      "technologies": ["Next.js", "TypeScript", "CSS"],
-      "overview": [
-        "Placeholder content for a future case study. Replace this entry with a real project, its context, and measurable outcomes."
-      ],
-      "problem": "Teams were switching between too many views to understand what needed attention.",
-      "solution": "A focused dashboard with clear hierarchy, useful defaults, and responsive layouts for quick daily check-ins.",
-      "responsibilities": ["Mapped the core user flow", "Built the responsive interface", "Documented reusable UI patterns"]
-    },
-    {
-      "slug": "community-directory",
-      "title": "Community directory",
-      "category": "Placeholder case study",
-      "summary": "A searchable directory concept that makes local organizations easier to discover and contact.",
-      "projectDate": "2024-11-01",
-      "role": "Frontend developer",
-      "technologies": ["React", "JavaScript", "Accessibility"],
-      "overview": [
-        "Placeholder content for a future case study. Add the real brief, screenshots, links, and results when this project is ready to publish."
-      ],
-      "problem": "Useful community resources were difficult to browse on smaller screens.",
-      "solution": "A lightweight search and filter experience with readable cards, strong empty states, and keyboard-friendly controls.",
-      "responsibilities": ["Designed the information structure", "Implemented filtering and responsive states", "Checked keyboard navigation"]
-    }
-  ],
-  "experience": [
-    {
-      "position": "Software developer",
-      "organization": "Placeholder studio",
-      "location": "Addis Ababa",
-      "startDate": "2024-01-01",
-      "current": true,
-      "responsibilities": [
-        "Placeholder role entry — replace with your real organization and responsibilities.",
-        "Build accessible, responsive interfaces from product requirements."
-      ],
-      "achievements": ["Created reusable UI patterns that improved consistency across projects."]
-    }
-  ],
-  "education": [
-    {
-      "qualification": "Bachelor of Science",
-      "fieldOfStudy": "Computer Science",
-      "institution": "Placeholder university",
-      "location": "Addis Ababa",
-      "startDate": "2020-09-01",
-      "endDate": "2024-06-01",
-      "description": "Placeholder education entry — replace with your actual institution, dates, and highlights.",
-      "achievements": ["Focused on software engineering, web development, and human-centered design."]
-    }
-  ],
-  "certificates": [
-    {
-      "title": "Web development fundamentals",
-      "issuer": "Placeholder learning platform",
-      "issueDate": "2024-04-01",
-      "credentialID": "REPLACE-ME"
-    }
-  ],
-  "skills": [
-    { "name": "TypeScript", "category": "Languages" },
-    { "name": "JavaScript", "category": "Languages" },
-    { "name": "HTML & CSS", "category": "Languages" },
-    { "name": "React", "category": "Frontend" },
-    { "name": "Next.js", "category": "Frontend" },
-    { "name": "Responsive design", "category": "Frontend" },
-    { "name": "Accessibility", "category": "Practice" },
-    { "name": "Git & GitHub", "category": "Tools" },
-    { "name": "Figma", "category": "Tools" }
-  ]
+  "projects": [],
+  "experience": [],
+  "education": [],
+  "certificates": [],
+  "skills": []
 }
