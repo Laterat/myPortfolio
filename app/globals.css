@@ -76,7 +76,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .rail { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--canvas) 92%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--surface-border); padding: .85rem 1.25rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; }
 .rail::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: calc(var(--p) * 100%); background: var(--accent-hot); }
 .rail-name { font-weight: 750; }
-.rail-role, .rail-hint { display: none; }
+.rail-role { display: none; }
 .rail-time { font-size: .75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .rail-nav { display: flex; gap: 1rem; overflow-x: auto; width: 100%; font-size: .875rem; }
 .rail-nav a { padding: .35rem 0; color: var(--muted); white-space: nowrap; }
@@ -89,7 +89,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .rail-nav { flex-direction: column; gap: .15rem; overflow: visible; font-size: 1rem; }
   .rail-nav a { padding: .3rem .75rem; margin-left: -.75rem; box-shadow: none !important; border-left: 2px solid transparent; }
   .rail-nav a[aria-current] { border-left-color: var(--accent-hot); }
-  .rail-hint { display: block; margin-top: auto; font-size: .75rem; color: var(--faint); }
 }
 .sec { padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3rem); scroll-margin-top: 6.5rem; }
 .tint { background: var(--surface); }
