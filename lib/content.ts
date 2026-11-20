@@ -48,22 +48,10 @@ export type PortfolioContent = {
   };
   navigation: {
     sections: Array<{ id: string; label: string }>;
-    shortcutHint: string;
-    shortcutKey: string;
-    shortcutLabel: string;
-    openButton: string;
     localTimeLabel: string;
     localTimeSuffix: string;
     timeZone: string;
     timeLocale: string;
-  };
-  commandPalette: {
-    title: string;
-    searchLabel: string;
-    placeholder: string;
-    closeLabel: string;
-    emptyMessage: string;
-    footerHint: string;
   };
   copy: {
     labels: Record<string, string>;
