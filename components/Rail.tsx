@@ -37,6 +37,5 @@ export default function Rail({ name, role }: { name: string; role: string }) {
     <nav aria-label="Page sections" className="rail-nav">
       {portfolioContent.navigation.sections.map(({ id, label }) => <Link key={id} href={`/#${id}`} aria-current={active === id ? "location" : undefined}>{label}</Link>)}
     </nav>
-    <p className="rail-hint">{portfolioContent.navigation.shortcutHint}</p>
   </header>;
 }
