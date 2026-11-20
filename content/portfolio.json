@@ -36,22 +36,10 @@
       { "id": "toolkit", "label": "Toolkit" },
       { "id": "contact", "label": "Contact" }
     ],
-    "shortcutHint": "Ctrl K jumps to any section",
-    "shortcutKey": "k",
-    "shortcutLabel": "Ctrl K",
-    "openButton": "Open site navigation",
     "localTimeLabel": "Local time in Addis Ababa",
     "localTimeSuffix": "EAT · Addis Ababa",
     "timeZone": "Africa/Addis_Ababa",
     "timeLocale": "en-GB"
-  },
-  "commandPalette": {
-    "title": "Site navigation",
-    "searchLabel": "Search navigation",
-    "placeholder": "Jump to a section",
-    "closeLabel": "Esc",
-    "emptyMessage": "No sections found.",
-    "footerHint": "Use Ctrl K to open navigation"
   },
   "copy": {
     "labels": {

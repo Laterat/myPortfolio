@@ -4,7 +4,7 @@
   "title": "Portfolio content",
   "description": "Editable content and visible text for the portfolio site.",
   "type": "object",
-  "required": ["site", "identity", "navigation", "commandPalette", "copy", "socialLinks", "projects", "experience", "education", "certificates", "skills"],
+  "required": ["site", "identity", "navigation", "copy", "socialLinks", "projects", "experience", "education", "certificates", "skills"],
   "properties": {
     "$schema": { "type": "string" },
     "site": {
@@ -30,15 +30,13 @@
       "additionalProperties": false
     },
     "navigation": {
-      "type": "object", "required": ["sections", "shortcutHint", "shortcutKey", "shortcutLabel", "openButton", "localTimeLabel", "localTimeSuffix", "timeZone", "timeLocale"],
+      "type": "object", "required": ["sections", "localTimeLabel", "localTimeSuffix", "timeZone", "timeLocale"],
       "properties": {
         "sections": { "type": "array", "items": { "type": "object", "required": ["id", "label"], "properties": { "id": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "label": { "type": "string" } }, "additionalProperties": false } },
-        "shortcutHint": { "type": "string" }, "shortcutKey": { "type": "string", "minLength": 1 }, "shortcutLabel": { "type": "string" },
-        "openButton": { "type": "string" }, "localTimeLabel": { "type": "string" }, "localTimeSuffix": { "type": "string" }, "timeZone": { "type": "string" }, "timeLocale": { "type": "string" }
+        "localTimeLabel": { "type": "string" }, "localTimeSuffix": { "type": "string" }, "timeZone": { "type": "string" }, "timeLocale": { "type": "string" }
       },
       "additionalProperties": false
     },
-    "commandPalette": { "type": "object", "required": ["title", "searchLabel", "placeholder", "closeLabel", "emptyMessage", "footerHint"], "properties": { "title": { "type": "string" }, "searchLabel": { "type": "string" }, "placeholder": { "type": "string" }, "closeLabel": { "type": "string" }, "emptyMessage": { "type": "string" }, "footerHint": { "type": "string" } }, "additionalProperties": false },
     "copy": { "type": "object", "required": ["labels", "sections", "empty", "contactIntro", "emailCopied", "emailCopyFailed", "emailCopyHint", "openMailApp", "copyright"], "properties": { "labels": { "type": "object", "additionalProperties": { "type": "string" } }, "sections": { "type": "object", "additionalProperties": { "type": "string" } }, "empty": { "type": "object", "additionalProperties": { "type": "string" } }, "contactIntro": { "type": "string" }, "emailCopied": { "type": "string" }, "emailCopyFailed": { "type": "string" }, "emailCopyHint": { "type": "string" }, "openMailApp": { "type": "string" }, "copyright": { "type": "string" } }, "additionalProperties": false },
     "socialLinks": { "type": "array", "items": { "type": "object", "required": ["platform", "url"], "properties": { "platform": { "type": "string" }, "url": { "type": "string", "format": "uri" } }, "additionalProperties": false } },
     "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } },
